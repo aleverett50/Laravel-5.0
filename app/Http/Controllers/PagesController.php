@@ -35,7 +35,7 @@ class PagesController extends Controller {
     
 	Mail::send('emails.enquiry', $data, function($message)
 	{
-	    $message->to('alexe@wts-group.com', 'John Smith')->subject('Welcome!');
+	    $message->to('aleverett50@hotmail.com', 'Alex Everett')->subject('Website Enquiry');
 	});
 
 	return redirect('contact')->withSuccess('Your message has been sent!');
