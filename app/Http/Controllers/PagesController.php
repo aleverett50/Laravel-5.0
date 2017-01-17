@@ -33,7 +33,7 @@ class PagesController extends Controller {
 	* 
 	*/
     
-	Mail::later(60, 'emails.enquiry', $data, function($message)
+	Mail::queue('emails.enquiry', $data, function($message)
 	{
 	    $message->to('alexe@wts-group.com', 'Alex Everett')->subject('Website Enquiry');
 	});
