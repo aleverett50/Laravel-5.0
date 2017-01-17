@@ -9,4 +9,6 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/posts', 'PostsController@index');
+Route::get('posts', 'PostsController@index');
+Route::get('posts/{category}', 'PostsController@category');
+Route::get('post/{slug}', 'PostsController@showBlogBySlug');

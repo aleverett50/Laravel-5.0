@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\PostCategories;
 
 use Illuminate\Http\Request;
 
@@ -50,6 +51,23 @@ class PostsController extends Controller {
 	{
 		//
 	}
+
+	public function category($category)
+	{
+		
+		$posts = Post::whereHas('postCategory', function($q) use ($category)
+		
+		{
+
+		    $q->whereTitle($category);
+
+		})->get();
+
+
+		return view('posts.category')->withPosts($posts);
+
+	}
+
 
 	/**
 	 * Show the form for editing the specified resource.

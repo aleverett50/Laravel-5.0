@@ -25,13 +25,29 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
 					<li><a href="{{ url('/contact') }}">Contact</a></li>
-					<li><a href="{{ url('/posts') }}">Blog Posts</a></li>
+					<li><a class="dropdown-toggle" data-toggle="dropdown">Blog Posts</a>
+
+  <ul class="dropdown-menu">
+    <li><a href="{{ url('/posts') }}">All Blogs</a></li>
+        <li><a href="{{ url('/posts/sports') }}">Sports</a></li>
+    <li><a href="{{ url('/posts/movies') }}">Movies</a></li>
+  </ul>
+
+					</li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
+						<li><a href="{{ url('/auth/register') }}">Register</a>
+
+  <ul class="dropdown-menu">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+
+						</li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome {{ Auth::user()->first_name }} <span class="caret"></span></a>
