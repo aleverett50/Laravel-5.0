@@ -21,6 +21,13 @@ class PostsController extends Controller {
 		return view('posts.index')->withPosts($posts);
 	}
 
+	public function indexAdmin()
+	{
+		$posts = Post::all();
+		
+		return view('admin.posts')->withPosts($posts);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

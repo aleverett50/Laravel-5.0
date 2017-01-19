@@ -13,5 +13,11 @@ Route::get('posts', 'PostsController@index');
 Route::get('posts/{category}', 'PostsController@category');
 Route::get('post/{slug}', 'PostsController@showBlogBySlug');
 
+Route::group(['middleware' => 'guest'], function(){
 
-Route::get('/admin', 'PagesController@adminIndex');
+	/* Put all routes here that require user to be logged in. Otherwise it will redirect to login */
+
+	Route::get('/admin', 'PagesController@adminIndex');
+	Route::get('/admin/posts', 'PostsController@indexAdmin');
+
+});
