@@ -12,3 +12,6 @@ Route::controllers([
 Route::get('posts', 'PostsController@index');
 Route::get('posts/{category}', 'PostsController@category');
 Route::get('post/{slug}', 'PostsController@showBlogBySlug');
+
+
+Route::get('/admin', 'PagesController@adminIndex');

@@ -21,6 +21,13 @@ class PagesController extends Controller {
 	return view('pages.contact');
 
     }
+
+    public function adminIndex()
+    {
+
+    	return view('admin.index');
+
+    }
     
     public function postContact(Request $request)
     {

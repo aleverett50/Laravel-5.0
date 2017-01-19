@@ -68,6 +68,14 @@ class PostsController extends Controller {
 
 	}
 
+    public function showBlogBySlug($slug)
+    {
+
+    	$post = Post::whereSlug($slug)->first();
+
+    	return view('posts.slug')->withPost($post);
+
+    }
 
 	/**
 	 * Show the form for editing the specified resource.

@@ -11,7 +11,10 @@
 	<h4>{{ $post->title }} </h4>
 
 	<p>
-	  {{ $post->post }}
+	  {{ $post->post }} <br /> <br /> 
+
+	  <a href="{{ url('post/'.$post->slug) }}">View</a>
+
 	</p>
 
 	@endforeach
