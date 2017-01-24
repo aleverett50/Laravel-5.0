@@ -28,6 +28,7 @@ class PostsController extends Controller {
 		return view('admin.posts')->withPosts($posts);
 	}
 
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -35,7 +36,9 @@ class PostsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		
+		return view('admin.create');
+
 	}
 
 	/**
@@ -43,9 +46,11 @@ class PostsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+
+		
+		
 	}
 
 	/**
